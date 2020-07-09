@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-e305tpg(*pg#p_2^=8tz*$+&n8j1fi4u^ndg7hav0nu8k1oot'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 # Application definition
@@ -124,7 +124,6 @@ USE_TZ = True
 
 #STATIC_URL = '/static/'
 #STATIC_ROOT = 'static/'
-STATIC_ROOT = '/simple/static/'
 STATIC_URL = '/static/'
-
+STATIC_ROOT = '/static/'
 ALLOWED_HOSTS = '*'

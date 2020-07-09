@@ -13,7 +13,7 @@ def apiOverview(request):
 		'List':'/note-list/',
 		'Detail View':'/note-detail/<int:pk>/',
 		'Create':'/note-create/',
-		'Update':'/note-update/<int:pk>/',
+		'Update':'/note-upgrade/<int:pk>/',
 		'Delete':'/note-delete/<int:pk>/',
 		}
 
@@ -40,6 +40,17 @@ def noteCreate(request):
 		serializer.save()
 
 	return Response(serializer.data)
+
+@api_view(['POST'])
+def noteUgrade(request, pk):
+    note = Note.objects.get(id=pk)
+    serializer = NoteSerializer(instance=note, data=request.data)
+
+    if serializer.is_valid():
+        serializer.save()
+        
+    return Response(serializer.data)
+
 
 
 @api_view(['DELETE'])

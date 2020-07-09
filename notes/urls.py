@@ -6,5 +6,6 @@ urlpatterns = [
     path("note-list/", views.notesList, name="note-list"),
     path("note-detail/<int:pk>", views.noteDetail, name="note-detail") ,
     path("note-create/", views.noteCreate, name="note-create"),
+    path("note-upgrade/<int:pk>", views.noteUgrade, name="note-upgrade"),
     path("note-delete/<int:pk>", views.noteDelete, name="note-delete")
 ]
